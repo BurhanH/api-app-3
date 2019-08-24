@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	{% if title %}
+	<title> {{ title }} - Quotes</title>
+	{% else %}
+	<title> Welcome to Quotes</title>
+	{% endif %}
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <div> Quotes: <a href="/index">Home</a></div>
+    <hr>
+    <div id="banner">
+        {% block content %}{% endblock %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Flask-RESTful==0.3.7
+gunicorn==19.9.0

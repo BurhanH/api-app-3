@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Quotes</h1>
+    <p>A prototype REST API via Python and Flask.</p>
+    <p>Implemented CRUD functionality for REST API</p>
+    <p>Supports GET, POST, PUT, DELETE</p>
+
+    <h2>Getting started</h2>
+    <p>The current version of the API lives at https://some-url-to-api/api/v1/quotes
+        <ul>
+            <li>Some sample</li>
+            <li>Another sample</li>
+        </ul>
+    </p>
+
+    <h3>Versions</h3>
+    <p>
+        <table style="width:50%">
+        <tr align="center">
+            <th>Version</th>
+            <th>Data</th>
+            <th>Changes</th>
+        </tr>
+        <tr align="right">
+            <td>version 1</td>
+            <td>08/24/2019</td>
+            <td>Initial deployment</td>
+        </tr>
+        </table>
+    </p>
+
+    <h3>Endpoints</h3>
+    <p>
+        <table style="width:50%">
+            <tr align="center">
+                <th>Endpoint</th>
+                <th>What it does</th>
+            </tr>
+            <tr>
+                <td>/quotes</td>
+                <td>Returns random quote</td>
+            </tr>
+            <tr>
+                <td>/quotes/{id}</td>
+                <td>Returns a quote by id, if there is no quote with specific id returns warning message</td>
+            </tr>
+        </table>
+    </p>
+
+    <h3> to be continue ... </h3>
+
+
+{% endblock %}
