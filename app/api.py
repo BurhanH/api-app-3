@@ -10,8 +10,8 @@ api = Api(app)
 class Quote(Resource):
 
     @staticmethod
-    def get(quote_id: int = 0):
-        if quote_id == 0:
+    def get(quote_id: int = None):
+        if quote_id is None:
             return random.choice(data.QUOTES), 200
         for quote in data.QUOTES:
             if quote["quote_id"] == quote_id:
