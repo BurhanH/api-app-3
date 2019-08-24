@@ -64,5 +64,5 @@ class Quote(Resource):
 
 api.add_resource(Quote, "/api/v1/quotes", "/api/v1/quotes/", "/api/v1/quotes/<int:quote_id>")
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
