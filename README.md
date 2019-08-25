@@ -2,6 +2,7 @@
 REST API app (Python 3.7.3 + Flask 1.1.1)
 
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/BurhanH/api-app-3/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/BurhanH/api-app-3.svg?branch=master)](https://travis-ci.org/BurhanH/api-app-3)
 
 The main purpose was to build REST API. Definitely instead data file I should use database (probably it would be in next release).
 
