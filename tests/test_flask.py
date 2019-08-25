@@ -30,10 +30,14 @@ class RESTTest(unittest.TestCase):
         self.assertEqual(response.status_code, 201)
 
     def test_edit_quote(self):
-        pass
+        # TODO! Add test
+        expected = 201
+        self.assertEqual(expected, 201)
 
     def test_delete_quote(self):
-        pass
+        # TODO! Add test
+        expected = 200
+        self.assertEqual(expected, 200)
 
     def tearDown(self) -> None:
         pass
