@@ -35,9 +35,8 @@ class RESTTest(unittest.TestCase):
         self.assertEqual(expected, 201)
 
     def test_delete_quote(self):
-        # TODO! Add test
-        expected = 200
-        self.assertEqual(expected, 200)
+        response = self.client.delete(path='/api/v1/quotes/11', content_type='application/json')
+        self.assertEqual(response.status_code, 200)
 
     def tearDown(self) -> None:
         pass
