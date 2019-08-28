@@ -37,29 +37,33 @@ class Quote(Resource):
 
     @staticmethod
     def put(quote_id: int):
-        parser = reqparse.RequestParser()
-        parser.add_argument("author")
-        parser.add_argument("quote")
-        params = parser.parse_args()
-        for quote in data.QUOTES:
-            if quote_id == quote["quote_id"]:
-                quote["author"] = params["author"]
-                quote["quote"] = params["quote"]
-                return quote, 200
+        # FIXME!
+        # parser = reqparse.RequestParser()
+        # parser.add_argument("author")
+        # parser.add_argument("quote")
+        # params = parser.parse_args()
+        # for quote in data.QUOTES:
+        #     if quote_id == quote["quote_id"]:
+        #         quote["author"] = params["author"]
+        #         quote["quote"] = params["quote"]
+        #         return quote, 200
 
-        quote = {
-            "id": quote_id,
-            "author": params["author"],
-            "quote": params["quote"]
-        }
+        # quote = {
+        #     "id": quote_id,
+        #     "author": params["author"],
+        #     "quote": params["quote"]
+        # }
 
-        data.QUOTES.append(quote)
-        return quote, 201
+        # data.QUOTES.append(quote)
+        # return quote, 201
+        return f"Under construction. The quote {quote_id} supposes to be updated.", 501
 
     @staticmethod
     def delete(quote_id: int):
-        data.QUOTES = [quote for quote in data.QUOTES if quote["quote_id"] != quote_id]
-        return f"Quote with id {quote_id} is deleted.", 200
+        # FIXME!
+        # data.QUOTES = [quote for quote in data.QUOTES if quote["quote_id"] != quote_id]
+        # return f"Quote with id {quote_id} is deleted.", 200
+        return "Under construction. The quote {quote_id} supposes to be deleted. ", 501
 
 
 api.add_resource(Quote, "/api/v1/quotes", "/api/v1/quotes/", "/api/v1/quotes/<int:quote_id>")
