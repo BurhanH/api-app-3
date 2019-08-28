@@ -63,7 +63,7 @@ class Quote(Resource):
         # FIXME!
         # data.QUOTES = [quote for quote in data.QUOTES if quote["quote_id"] != quote_id]
         # return f"Quote with id {quote_id} is deleted.", 200
-        return "Under construction. The quote {quote_id} supposes to be deleted. ", 501
+        return f"Under construction. The quote {quote_id} supposes to be deleted.", 501
 
 
 api.add_resource(Quote, "/api/v1/quotes", "/api/v1/quotes/", "/api/v1/quotes/<int:quote_id>")
