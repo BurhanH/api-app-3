@@ -60,10 +60,8 @@ class Quote(Resource):
 
     @staticmethod
     def delete(quote_id: int):
-        # FIXME!
-        # data.QUOTES = [quote for quote in data.QUOTES if quote["quote_id"] != quote_id]
-        # return f"Quote with id {quote_id} is deleted.", 200
-        return f"Under construction. The quote {quote_id} supposes to be deleted.", 501
+        data.QUOTES = [quote for quote in data.QUOTES if quote.get("quote_id") != quote_id]
+        return f"Quote with id {quote_id} is deleted.", 200
 
 
 api.add_resource(Quote, "/api/v1/quotes", "/api/v1/quotes/", "/api/v1/quotes/<int:quote_id>")
