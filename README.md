@@ -9,4 +9,5 @@ The main purpose was to build REST API. Definitely instead data file I should us
 
 Currently this service available on Heroku [https://api-flask-baur.herokuapp.com/](https://api-flask-baur.herokuapp.com/)
 
-Next steps (08/24/2019) are - add documentation, make a homepage more pretty, and write some tests.
+(08/24/2019) Next steps are - add documentation, make a homepage more pretty, and write some tests.
+(08/30/2019) Next steps are - add documentation, make a homepage more pretty.
