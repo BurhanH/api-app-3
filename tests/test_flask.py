@@ -14,6 +14,20 @@ class RESTTest(unittest.TestCase):
             "author": "Friedrich Nietzsche, Twilight of the Idols",
             "quote": "Without music, life would be a mistake."
         }
+        
+        self.put_edit_data = {
+            "quote_id": 9,
+            "author": "Anonymous",
+            "quote": "There are no words."
+        }
+
+        self.put_create_data = {
+            "quote_id": 12,
+            "author": "Groucho Marx",
+            "quote": "I find television very educating."
+                     "Every time somebody turns on the set, "
+                     "I go into the other room and read a book."
+        }
 
     def test_get_quotes(self):
         response = self.client.get(path='/api/v1/quotes', content_type='application/json')
@@ -30,9 +44,16 @@ class RESTTest(unittest.TestCase):
         self.assertEqual(response.status_code, 201)
 
     def test_edit_quote(self):
-        # TODO! Add test
-        expected = 501
-        self.assertEqual(expected, 501)
+        response = self.client.put(path='api/v1/quotes/9',
+                                   data=json.dumps(self.put_edit_data),
+                                   content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+
+    def test_create_put_quote(self):
+        response = self.client.put(path='api/v1/quotes/12',
+                                   data=json.dumps(self.put_create_data),
+                                   content_type='application/json')
+        self.assertEqual(response.status_code, 201)
 
     def test_delete_quote(self):
         response = self.client.delete(path='/api/v1/quotes/11', content_type='application/json')

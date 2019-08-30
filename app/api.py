@@ -14,7 +14,7 @@ class Quote(Resource):
         if quote_id is None:
             return random.choice(data.QUOTES), 200
         for quote in data.QUOTES:
-            if quote["quote_id"] == quote_id:
+            if quote.get("quote_id") == quote_id:
                 return quote, 200
         return "Quote not found", 404
 
@@ -25,7 +25,7 @@ class Quote(Resource):
         parser.add_argument("quote")
         params = parser.parse_args()
         for quote in data.QUOTES:
-            if quote_id == quote["quote_id"]:
+            if quote_id == quote.get("quote_id"):
                 return f"Quote with id {quote_id} already exists", 400
         quote = {
             "id": int(quote_id),
@@ -37,27 +37,25 @@ class Quote(Resource):
 
     @staticmethod
     def put(quote_id: int):
-        # FIXME!
-        # parser = reqparse.RequestParser()
-        # parser.add_argument("author")
-        # parser.add_argument("quote")
-        # params = parser.parse_args()
-        # for quote in data.QUOTES:
-        #     if quote_id == quote["quote_id"]:
-        #         quote["author"] = params["author"]
-        #         quote["quote"] = params["quote"]
-        #         return quote, 200
+        parser = reqparse.RequestParser()
+        parser.add_argument("author")
+        parser.add_argument("quote")
+        params = parser.parse_args()
+        for quote in data.QUOTES:
+            if quote_id == quote.get("quote_id"):
+                quote["author"] = params["author"]
+                quote["quote"] = params["quote"]
+                return quote, 200
 
-        # quote = {
-        #     "id": quote_id,
-        #     "author": params["author"],
-        #     "quote": params["quote"]
-        # }
+        quote = {
+            "id": quote_id,
+            "author": params["author"],
+            "quote": params["quote"]
+        }
 
-        # data.QUOTES.append(quote)
-        # return quote, 201
-        return f"Under construction. The quote {quote_id} supposes to be updated.", 501
-
+        data.QUOTES.append(quote)
+        return quote, 201
+        
     @staticmethod
     def delete(quote_id: int):
         data.QUOTES = [quote for quote in data.QUOTES if quote.get("quote_id") != quote_id]
