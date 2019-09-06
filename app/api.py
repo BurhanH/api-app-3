@@ -1,4 +1,4 @@
-import random
+from random import SystemRandom
 
 from flask_restful import Api, Resource, reqparse
 
@@ -12,7 +12,7 @@ class Quote(Resource):
     @staticmethod
     def get(quote_id: int = None):
         if quote_id is None:
-            return random.choice(data.QUOTES), 200
+            return SystemRandom().choice(data.QUOTES), 200
         for quote in data.QUOTES:
             if quote.get("quote_id") == quote_id:
                 return quote, 200
@@ -55,7 +55,7 @@ class Quote(Resource):
 
         data.QUOTES.append(quote)
         return quote, 201
-        
+
     @staticmethod
     def delete(quote_id: int):
         data.QUOTES = [quote for quote in data.QUOTES if quote.get("quote_id") != quote_id]
