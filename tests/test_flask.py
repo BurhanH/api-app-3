@@ -14,13 +14,13 @@ class RESTTest(unittest.TestCase):
             "author": "Friedrich Nietzsche, Twilight of the Idols",
             "quote": "Without music, life would be a mistake."
         }
-        
+
         self.post_data_negative = {
             "quote_id": 1,
             "author": "Anonimus",
             "quote": "Dummy quote."
         }
-        
+
         self.put_edit_data = {
             "quote_id": 9,
             "author": "Anonymous",
@@ -42,7 +42,7 @@ class RESTTest(unittest.TestCase):
     def test_get_quote(self):
         response = self.client.get(path='/api/v1/quotes/1', content_type='application/json')
         self.assertEqual(response.status_code, 200)
-        
+
     def test_get_quote_negative(self):
         response = self.client.get(path='/api/v1/quotes/99999', content_type='application/json')
         self.assertEqual(response.status_code, 404)
