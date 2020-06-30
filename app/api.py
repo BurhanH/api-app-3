@@ -16,7 +16,7 @@ class Quote(Resource):
         for quote in data.QUOTES:
             if quote.get("quote_id") == quote_id:
                 return quote, 200
-        return "Quote not found", 404
+        return {"error": "Quote not found"}, 404
 
     @staticmethod
     def post(quote_id: int):
@@ -26,7 +26,7 @@ class Quote(Resource):
         params = parser.parse_args()
         for quote in data.QUOTES:
             if quote_id == quote.get("quote_id"):
-                return f"Quote with id {quote_id} already exists", 400
+                return {"error": f"Quote with id {quote_id} already exists"}, 400
         quote = {
             "id": int(quote_id),
             "author": params["author"],
@@ -59,7 +59,7 @@ class Quote(Resource):
     @staticmethod
     def delete(quote_id: int):
         data.QUOTES = [quote for quote in data.QUOTES if quote.get("quote_id") != quote_id]
-        return f"Quote with id {quote_id} is deleted.", 200
+        return {"success": f"Quote with id {quote_id} is deleted."}, 200
 
 
 api.add_resource(Quote, "/api/v1/quotes", "/api/v1/quotes/", "/api/v1/quotes/<int:quote_id>")
