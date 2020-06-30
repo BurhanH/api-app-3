@@ -1,5 +1,5 @@
 # api-app-3
-REST API app (Python 3.7.3 + Flask 1.1.1)
+REST API app (Python 3.7.3 + Flask 1.1.1 + bootstrap 4.5.0)
 
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/BurhanH/api-app-3/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/BurhanH/api-app-3.svg?branch=master)](https://travis-ci.org/BurhanH/api-app-3)
@@ -9,13 +9,14 @@ REST API app (Python 3.7.3 + Flask 1.1.1)
 
 
 ## Description
-The main purpose was to build REST API. Definitely instead data file I should use database (probably it would be in next release).
+The main purpose was to build REST API. Definitely instead data file I should use database (probably it would be in version 2).
 
 Currently this service available on Heroku [https://api-flask-baur.herokuapp.com/](https://api-flask-baur.herokuapp.com/)
 
 ## TODO List
-(08/24/2019) Next steps are - add documentation, make a homepage more pretty, and write some tests. <br>
-(08/30/2019) Next steps are - add documentation, make a homepage more pretty.
+(08/24/2019) ~Next steps are - add documentation, make a homepage more pretty, and write some tests.~ <br>
+(08/30/2019) ~Next steps are - add documentation, make a homepage more pretty.~ <br>
+(06/30/2020) Next steps are - add documentation. <br>
 
 ## Screenshots
 
