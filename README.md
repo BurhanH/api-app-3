@@ -7,7 +7,6 @@ REST API app (Python 3.7.3 + Flask 1.1.1 + bootstrap 4.5.0)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f03fd77b35644ccaac8c537c1e050b1c)](https://www.codacy.com/app/BurhanH/api-app-3?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BurhanH/api-app-3&amp;utm_campaign=Badge_Grade)
 [![HitCount](http://hits.dwyl.com/BurhanH/api-app-3.svg)](http://hits.dwyl.com/BurhanH/api-app-3)
 
-
 ## Description
 The main purpose was to build REST API. Definitely instead data file I should use database (probably it would be in version 2).
 
